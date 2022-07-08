@@ -29,6 +29,9 @@ const Home: NextPage = () => {
             </Grid>
           </Grid>
         </main>
+        <Box>
+          お知らせ
+        </Box>
         {/* <Footer /> */}
       </div>
     </>
