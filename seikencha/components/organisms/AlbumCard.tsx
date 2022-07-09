@@ -1,71 +1,39 @@
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
+import Link from 'next/link'
 import React from 'react'
+import { DiscType } from '../models/DiscType'
 import { ShoppingLinkIcon } from '../molecules/ShoppingLinkIcon'
 
 type AlbumCardProps = {
-  name: string,
-  description: string,
-  image: string,
-  alt: string,
-  specialUrl: string,
-  isCD?: boolean,
-  maxWidth: number,
-  shoppingUrl: string
+  disc: DiscType
 }
 export const AlbumCard: React.FC<AlbumCardProps> = (props) => {
-
+  const id = props.disc.id.toString()
   return (
-    <Card sx={{ maxWidth: props.maxWidth }}>
-      <CardActionArea
-        onClick={() => { console.log('first') }}>
-        <CardMedia
-          component="img"
-          height={props.isCD ? props.maxWidth : props.maxWidth * 1.29}
-          image={props.image}
-          alt={props.alt}
-        />
-        <CardContent>
-          <Typography
-            gutterBottom
-            sx={{
-              fontWeightBold: 'FontWeight',
-              fontSize: props.name.length > 10 ? 13 : 18,
-              fontFamily: 'serif',
-              color: '#542218',
-              whiteSpace: 'nowrap'
-            }}>
-            {props.name}
-          </Typography>
-          <Typography
-            sx={{
-              fontWeightBold: 'FontWeight',
-              fontSize: 14,
-              fontFamily: 'serif',
-              color: '#542218',
-              whiteSpace: 'nowrap'
-            }}>
-            {props.description}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <ShoppingLinkIcon url={props.shoppingUrl} />
-          <Button
-            variant="outlined"
-            sx={{ borderColor: '#542218' }}
-            href={props.specialUrl}>
+    <Link href={`/discography/detail/${id}`} >
+      <Card sx={{ maxWidth: props.disc.maxWidth }}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height={props.disc.isCD ? props.disc.maxWidth : props.disc.maxWidth * 1.29}
+            image={props.disc.image}
+            alt={props.disc.alt}
+          />
+          <CardContent>
             <Typography
+              gutterBottom
               sx={{
                 fontWeightBold: 'FontWeight',
-                fontSize: 12,
+                fontSize: props.disc.albumTitle.length > 10 ? 13 : 18,
                 fontFamily: 'serif',
                 color: '#542218',
                 whiteSpace: 'nowrap'
               }}>
-              特設サイト
+              {props.disc.albumTitle}
             </Typography>
-          </Button>
-        </CardActions>
-      </CardActionArea>
-    </Card >
+          </CardContent>
+        </CardActionArea>
+      </Card >
+    </Link >
   )
 }

@@ -24,14 +24,8 @@ const discography = () => {
             return (
               <Grid key={index} item xs={3}>
                 <AlbumCard
-                  name={disc.albumTitle}
-                  description={disc.description}
-                  image={disc.image}
-                  alt={disc.alt}
-                  specialUrl={disc.specialUrl}
-                  shoppingUrl={disc.shoppingUrl}
-                  isCD={disc.isCD}
-                  maxWidth={disc.maxWidth} />
+                  disc={disc}
+                />
               </Grid>
             )
           })}
