@@ -12,7 +12,6 @@ export const DescTypography: React.FC<DescTypographyProps> = (props) => {
         fontSize: 18,
         fontFamily: 'serif',
         color: '#542218',
-        whiteSpace: 'nowrap'
       }}>
       {props.description}
     </Typography>

@@ -27,7 +27,6 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
             fontSize: 18,
             fontFamily: 'serif',
             color: '#542218',
-            whiteSpace: 'nowrap'
           }}>
           {props.name}
         </Typography>
@@ -37,7 +36,6 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
             fontSize: 14,
             fontFamily: 'serif',
             color: '#542218',
-            whiteSpace: 'nowrap'
           }}>
           {props.description}
         </Typography>
