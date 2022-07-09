@@ -27,7 +27,8 @@ export const SeikenchaAppBar = () => {
           color: '#542218',
           height: 60
         }}
-        position='static'>
+        position='static'
+        elevation={1}>
         <Toolbar>
           <Link
             href='/'
