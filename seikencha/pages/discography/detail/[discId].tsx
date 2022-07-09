@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { ArtistTitle } from '../../../components/atoms/ArtistTitle'
@@ -36,7 +36,7 @@ const Detail: React.FC = () => {
                   <img
                     src={discDetail.image}
                     alt={discDetail.albumTitle}
-                    height={discDetail.isCD ? discDetail.maxWidth : discDetail.maxWidth * 2 * 1.29}
+                    height={discDetail.isCD ? discDetail.maxWidth * 2 : discDetail.maxWidth * 2 * 1.29}
                     width={discDetail.maxWidth * 2}
                   />
                 </Grid>
@@ -44,6 +44,11 @@ const Detail: React.FC = () => {
                   <TitleTypography
                     title={discDetail.albumTitle}
                   />
+                  <DescTypography
+                    description={discDetail.releaseDate}
+                    fontSize={12}
+                  />
+                  <Box mt={6} />
                   <DescTypography
                     description={discDetail.description}
                   />
