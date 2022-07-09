@@ -1,5 +1,8 @@
 export type DiscType = {
-  title: string
+  id: number,
+  albumTitle: string
+  songTitles: string[]
+  releaseDate: string
   description: string
   image: string
   alt: string
@@ -10,8 +13,21 @@ export type DiscType = {
 }
 export const discs: DiscType[] = [
   {
-    title: '螢火を灯す',
-    description: '4th album [M3-2021春]',
+    id: 4,
+    albumTitle: '螢火を灯す',
+    songTitles: [
+      '螢火を灯す',
+      '	螢火を灯す～Piano arr.～',
+      '螢火を灯す(Instrumental)'
+    ],
+    releaseDate: '4th Album [M3-2021春](2021.10.31 released)',
+    description: 'もう誰にも委ねない。独りで全部決められるから── \
+    大切な人との決別。前に進む強い意志。 和と憂いをモチーフに紡ぐピアノボーカルユニット正弦鍵盤茶屋１年ぶりの新作！\
+    ピアノと正弦波が織りなす「螢火を灯す」配信開始。\
+    \
+    作詞作曲編曲：ずんだちきん\
+    ボーカル：nononore\
+    イラスト：ノーコピーライトガール様',
     image: '/image/albums/4thal.jpeg',
     alt: '4th',
     specialUrl: 'https://seikencha-4th.tumblr.com/',
@@ -20,8 +36,23 @@ export const discs: DiscType[] = [
     maxWidth: 220
   },
   {
-    title: 'ふわり舞い散る花びらのように',
-    description: '3rd album [M3-2020秋]',
+    id: 3,
+    albumTitle: 'ふわり舞い散る花びらのように',
+    songTitles: [
+      '通りゃんせ',
+      '潮解',
+      '嘆',
+      'ふわり舞い散る花びらのように',
+      '麻糸の誓い',
+      '昇',
+      '落花流水～Piano ver.～',
+      '星の雫～Piano ver.～'
+    ],
+    releaseDate: '3rd Album [M3-2020秋](2020.10.25 released)',
+    description: '今年もまた会いに来たよ\
+    決して交わらない二人の世界、忘れられない想いが今蘇る。\
+    和と憂いをモチーフに紡ぐピアノボーカルユニット正弦鍵盤茶屋の第三作！\
+    叶わなかった恋を唄う「潮解」、和楽器の箏の音色を取り入れた「ふわり舞い散る花びらのように」、優しく包み込むような「麻糸の誓い」他全８曲入。',
     image: '/image/albums/3rdal.jpeg',
     alt: '3rd',
     specialUrl: 'https://seikencha-3rd.tumblr.com/',
@@ -29,8 +60,19 @@ export const discs: DiscType[] = [
     maxWidth: 220
   },
   {
-    title: '星の雫',
-    description: '2nd album [M3-2020春]',
+    id: 2,
+    albumTitle: '星の雫',
+    songTitles: [
+      '星の雫 Guest Vocal:rin',
+      '空蝉が哭く',
+      '沈',
+      '溶',
+      '温'
+    ],
+    releaseDate: '2nd Album [M3-2020春](2020.03.01 released)',
+    description: '繋いだ手の中に隠した、私と貴女だけの物語------\
+    物悲しく儚いピアノが綴る女性ツインボーカル曲「星の雫」、弦楽器とオルガンが織り成す哀愁溢れる女性ボーカル曲「空蝉が哭く」他全５曲入\
+    ',
     image: '/image/albums/2ndal.png',
     alt: '2nd',
     specialUrl: 'https://seikencha.tumblr.com/',
@@ -38,8 +80,28 @@ export const discs: DiscType[] = [
     maxWidth: 220
   },
   {
-    title: '落花流水',
-    description: '1st album [M3-2019秋]',
+    id: 1,
+    albumTitle: '落花流水',
+    songTitles: [
+      '序',
+      '落花流水',
+      '生贄のダンス',
+      '間',
+      'confession',
+      '名前のない未来',
+      '綴'
+    ],
+    releaseDate: '1st Album [M3-2019秋](2019.10.27 released)',
+    description: '闇と憂い、和をテーマに描いたピアノ＆女性ボーカルアルバム。\
+    ​\
+    和を感じさせるピアノとコーラスワークが映えるバラードナンバー「落花流水」\
+    無機質なリズムトラックに民族的な調和を奏でる「生贄のダンス」\
+    6/8拍子のリズムに乗ったピアノとストリングスが美しい「confession」\
+    けだるい日常を前向きなメロディにのせた「名前のない未来」\
+    全曲をメドレー形式で演奏するピアノインスト「間」他全７曲を収録。\
+    ​\
+    抹茶を飲みながら和菓子を食べたくなること、間違いなし！\
+    2019.10.27@M3-2019秋サ-01aにて頒布しました。',
     image: '/image/albums/1stal.png',
     alt: '1st',
     specialUrl: 'https://seikencha.wixsite.com/seikencha',
