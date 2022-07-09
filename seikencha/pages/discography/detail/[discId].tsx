@@ -11,6 +11,7 @@ import { AlbumCard } from '../../../components/organisms/AlbumCard'
 import { Header } from '../../../components/organisms/Header'
 import { ProfileCard } from '../../../components/organisms/ProfileCard'
 import { SeikenchaAppBar } from '../../../components/organisms/SeikenchaAppBar'
+import { SongsCard } from '../../../components/organisms/SongsCard'
 
 const Detail: React.FC = () => {
   const router = useRouter()
@@ -26,9 +27,12 @@ const Detail: React.FC = () => {
           <SeikenchaAppBar />
           {discDetail &&
             <>
-
-              <Grid container spacing={2} columns={{ xs: 4, sm: 4, md: 12 }}>
-                <Grid item xs={8}>
+              <Grid
+                justifyContent="center"
+                container
+                spacing={2}
+                columns={{ xs: 4, sm: 4, md: 12 }}>
+                <Grid item xs={4}>
                   <img
                     src={discDetail.image}
                     alt={discDetail.albumTitle}
@@ -39,11 +43,11 @@ const Detail: React.FC = () => {
                 <Grid item xs={4}>
                   <TitleTypography
                     title={discDetail.albumTitle}
-                    fontSize={20} />
+                  />
                   <DescTypography
                     description={discDetail.description}
                   />
-
+                  <SongsCard songs={discDetail.songTitles} />
                 </Grid>
               </Grid>
             </>

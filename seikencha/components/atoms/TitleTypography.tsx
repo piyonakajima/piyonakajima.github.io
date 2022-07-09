@@ -5,11 +5,13 @@ import React from 'react'
 type TitleTypographyProps = {
   title: string
   fontSize?: number
+  key?: number
 }
 export const TitleTypography: React.FC<TitleTypographyProps> = (props) => {
   return (
     <Box display='flex' my={3}>
       <Typography
+        key={props.key}
         sx={{
           fontWeightBold: 'FontWeight',
           fontSize: props.fontSize ? props.fontSize : 40,
