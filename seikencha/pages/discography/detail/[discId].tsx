@@ -53,17 +53,23 @@ const Detail: React.FC = () => {
                     description={discDetail.description}
                   />
                   <SongsCard songs={discDetail.songTitles} />
+                  <Button
+                    variant='contained'
+                    href={discDetail.specialUrl}>
+                    特設サイト
+                  </Button>
+                  <Box mt={3} />
                   <Box display='flex'>
                     <Button
                       variant='contained'
-                      href={discDetail.specialUrl}>
-                      特設サイト
+                      href={discDetail.downloadUrl}>
+                      ダウンロード版を購入
                     </Button>
                     <Box ml={4} />
                     <Button
                       variant='contained'
-                      href={discDetail.shoppingUrl}>
-                      BOOTHでダウンロード版を購入する
+                      href={discDetail.packageUrl}>
+                      パッケージ版を購入
                     </Button>
                   </Box>
                 </Grid>

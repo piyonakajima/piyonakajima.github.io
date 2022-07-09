@@ -7,7 +7,8 @@ export type DiscType = {
   image: string
   alt: string
   specialUrl: string
-  shoppingUrl: string
+  downloadUrl?: string
+  packageUrl?: string
   isCD?: boolean
   maxWidth: number
 }
@@ -31,7 +32,7 @@ export const discs: DiscType[] = [
     image: '/image/albums/4thal.jpeg',
     alt: '4th',
     specialUrl: 'https://seikencha-4th.tumblr.com/',
-    shoppingUrl: 'https://seikencha.booth.pm/items/3357537',
+    downloadUrl: 'https://seikencha.booth.pm/items/3357537',
     isCD: true,
     maxWidth: 220
   },
@@ -56,7 +57,8 @@ export const discs: DiscType[] = [
     image: '/image/albums/3rdal.jpeg',
     alt: '3rd',
     specialUrl: 'https://seikencha-3rd.tumblr.com/',
-    shoppingUrl: 'https://seikencha.booth.pm/items/2912516',
+    packageUrl: 'https://seikencha.booth.pm/items/2458876',
+    downloadUrl: 'https://seikencha.booth.pm/items/2912516',
     maxWidth: 220
   },
   {
@@ -76,7 +78,8 @@ export const discs: DiscType[] = [
     image: '/image/albums/2ndal.png',
     alt: '2nd',
     specialUrl: 'https://seikencha.tumblr.com/',
-    shoppingUrl: 'https://seikencha.booth.pm/items/1856719',
+    downloadUrl: 'https://seikencha.booth.pm/items/1856719',
+    packageUrl: 'https://seikencha.booth.pm/items/1868137',
     maxWidth: 220
   },
   {
@@ -105,7 +108,8 @@ export const discs: DiscType[] = [
     image: '/image/albums/1stal.png',
     alt: '1st',
     specialUrl: 'https://seikencha.wixsite.com/seikencha',
-    shoppingUrl: 'https://seikencha.booth.pm/items/1647493',
+    downloadUrl: 'https://seikencha.booth.pm/items/1647493',
+    packageUrl: 'https://seikencha.booth.pm/items/1647541',
     maxWidth: 220
   }
 ]
