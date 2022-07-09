@@ -1,4 +1,4 @@
-import { Box, Grid } from '@mui/material'
+import { Box, Button, Grid } from '@mui/material'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { ArtistTitle } from '../../../components/atoms/ArtistTitle'
@@ -53,6 +53,19 @@ const Detail: React.FC = () => {
                     description={discDetail.description}
                   />
                   <SongsCard songs={discDetail.songTitles} />
+                  <Box display='flex'>
+                    <Button
+                      variant='contained'
+                      href={discDetail.specialUrl}>
+                      特設サイト
+                    </Button>
+                    <Box ml={4} />
+                    <Button
+                      variant='contained'
+                      href={discDetail.shoppingUrl}>
+                      BOOTHでダウンロード版を購入する
+                    </Button>
+                  </Box>
                 </Grid>
               </Grid>
             </>
