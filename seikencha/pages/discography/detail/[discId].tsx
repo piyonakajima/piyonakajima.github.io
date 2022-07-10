@@ -18,12 +18,10 @@ type PathParams = {
 }
 export const getStaticPaths: GetStaticPaths<PathParams> = async () => {
   return {
-    paths: [
-      { params: { discId: '1' } },
-      { params: { discId: '2' } },
-      { params: { discId: '3' } },
-      // { params: { discId: '4' } },
-    ],
+    paths:
+      discs.map(disc =>
+        ({ params: { discId: disc.id.toString() } })
+      ),
     fallback: false
   }
 }
