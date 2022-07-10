@@ -5,6 +5,7 @@ import { AlbumImage } from '../../../components/atoms/AlbumImage'
 import { DescTypography } from '../../../components/atoms/DescTypography'
 import { EventNameBox } from '../../../components/atoms/EventNameBox'
 import { TitleTypography } from '../../../components/atoms/TitleTypography'
+import useWindowSize from '../../../components/hooks/useWindowSize'
 import { discs } from '../../../components/models/DiscType'
 import { Header } from '../../../components/organisms/Header'
 import { SeikenchaAppBar } from '../../../components/organisms/SeikenchaAppBar'
@@ -16,7 +17,7 @@ const Detail: React.FC = () => {
   const { discId } = router.query;
   const discIdNumber = (typeof discId === 'string') ? parseInt(discId) : 0
   const discDetail = discs.find((disc) => disc.id === discIdNumber)
-
+  const windowSize = useWindowSize()
   useEffect(() => {
     if (!discDetail && discId) {
       router.replace('/discography')
@@ -36,7 +37,7 @@ const Detail: React.FC = () => {
                 spacing={2}
                 columns={{ xs: 3, sm: 3, md: 12 }}>
                 <Grid item xs={4}>
-                  <Box pt={4} pl={4}>
+                  <Box pt={4} ml={(windowSize && windowSize.width >= 440) ? 2 : 0}>
                     <AlbumImage
                       disc={discDetail}
                       width={440} />
