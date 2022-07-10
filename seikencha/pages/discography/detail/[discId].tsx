@@ -1,7 +1,9 @@
-import { Box, Button, Grid } from '@mui/material'
+import { Box, Button, Grid, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
+import { AlbumImage } from '../../../components/atoms/AlbumImage'
 import { DescTypography } from '../../../components/atoms/DescTypography'
+import { EventNameBox } from '../../../components/atoms/EventNameBox'
 import { TitleTypography } from '../../../components/atoms/TitleTypography'
 import { discs } from '../../../components/models/DiscType'
 import { Header } from '../../../components/organisms/Header'
@@ -34,44 +36,52 @@ const Detail: React.FC = () => {
                 spacing={2}
                 columns={{ xs: 4, sm: 4, md: 12 }}>
                 <Grid item xs={4}>
-                  <img
-                    src={discDetail.image}
-                    alt={discDetail.albumTitle}
-                    height={discDetail.isCD ? discDetail.maxWidth * 2 : discDetail.maxWidth * 2 * 1.29}
-                    width={discDetail.maxWidth * 2}
-                  />
+                  <Box pt={4} pl={4}>
+                    <AlbumImage disc={discDetail} />
+                  </Box>
                 </Grid>
                 <Grid item xs={4}>
-                  <TitleTypography
-                    title={discDetail.albumTitle}
-                  />
-                  <DescTypography
-                    description={discDetail.releaseDate + 'released'}
-                    fontSize={12}
-                  />
-                  <Box mt={6} />
-                  <DescTypography
-                    description={discDetail.description}
-                  />
-                  <SongsCard songs={discDetail.songTitles} />
-                  <Button
-                    variant='contained'
-                    href={discDetail.specialUrl}>
-                    特設サイト
-                  </Button>
-                  <Box mt={3} />
-                  <Box display='flex'>
-                    <Button
-                      variant='contained'
-                      href={discDetail.downloadUrl}>
-                      ダウンロード版を購入
-                    </Button>
-                    <Box ml={4} />
-                    <Button
-                      variant='contained'
-                      href={discDetail.packageUrl}>
-                      パッケージ版を購入
-                    </Button>
+                  <Box px={4}>
+                    {discDetail.eventName && (
+                      <Box mt={4}>
+                        <EventNameBox eventName={discDetail.eventName} />
+                      </Box>
+                    )}
+                    <Box ml={2}>
+                      <TitleTypography
+                        title={discDetail.albumTitle}
+                      />
+                      <DescTypography
+                        description={discDetail.releaseDate + 'released'}
+                        fontSize={12}
+                      />
+                      <Box mt={4} />
+                      <DescTypography
+                        description={discDetail.description}
+                      />
+                      <Box mt={2} />
+                      <SongsCard songs={discDetail.songTitles} />
+                      <Box mt={4} />
+                      <Button
+                        variant='contained'
+                        href={discDetail.specialUrl}>
+                        特設サイト
+                      </Button>
+                      <Box mt={2} />
+                      <Box display='flex'>
+                        <Button
+                          variant='contained'
+                          href={discDetail.downloadUrl}>
+                          ダウンロード版を購入
+                        </Button>
+                        <Box ml={4} />
+                        <Button
+                          variant='contained'
+                          href={discDetail.packageUrl}>
+                          パッケージ版を購入
+                        </Button>
+                      </Box>
+                    </Box>
                   </Box>
                 </Grid>
               </Grid>
