@@ -3,7 +3,7 @@ import { DiscType } from '../models/DiscType'
 
 type AlbumImageProps = {
   disc: DiscType
-  width: number // 220 * 2 = 440 TODO remove
+  width: number
 }
 export const AlbumImage: React.FC<AlbumImageProps> = (props) => {
   return (
@@ -11,8 +11,8 @@ export const AlbumImage: React.FC<AlbumImageProps> = (props) => {
       <img
         src={props.disc.image}
         alt={props.disc.albumTitle}
-        height={props.disc.isCD ? props.width : props.width * 1.29}
         width={props.width}
+        height='auto'
       />
     </>
   )
