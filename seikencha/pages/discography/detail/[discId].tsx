@@ -48,13 +48,26 @@ const Detail: React.FC = () => {
                       </Box>
                     )}
                     <Box ml={2}>
+                      <Box mt={4} />
                       <TitleTypography
                         title={discDetail.albumTitle}
                       />
-                      <DescTypography
-                        description={discDetail.releaseDate + 'released'}
-                        fontSize={12}
-                      />
+                      <Box display='flex'>
+                        {
+                          discDetail.releaseNumber &&
+                          (<>
+                            <DescTypography
+                              description={discDetail.releaseNumber}
+                              fontSize={12}
+                            />
+                            <Box ml={2} />
+                          </>)
+                        }
+                        <DescTypography
+                          description={discDetail.releaseDate + 'released'}
+                          fontSize={12}
+                        />
+                      </Box>
                       <Box mt={4} />
                       <DescTypography
                         description={discDetail.description}
