@@ -16,7 +16,7 @@ export const TitleTypography: React.FC<TitleTypographyProps> = (props) => {
         fontSize: props.fontSize ? props.fontSize : 40,
         fontFamily: 'serif',
         color: '#542218',
-        whiteSpace: 'nowrap'
+        whiteSpace: 'pre-wrap'
       }}>
       {props.title}
     </Typography>

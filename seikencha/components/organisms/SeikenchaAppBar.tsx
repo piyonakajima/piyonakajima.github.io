@@ -16,7 +16,7 @@ export const SeikenchaAppBar: React.FC<SeikenchaAppBarProps> = (props) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
   const contents: contentType[] = [
     { title: '自己紹介', url: '/profile' },
-    { title: '過去作品', url: '/discography' },
+    { title: '作品一覧', url: '/discography' },
     { title: '購入する', url: 'https://seikencha.booth.pm/', isExternal: true },
     { title: 'Twitter', url: 'https://twitter.com/seikencha', isExternal: true },
     { title: 'YouTube', url: 'https://www.youtube.com/channel/UCA9jmCbUl9sN4YNVl__W1VA/videos', isExternal: true },

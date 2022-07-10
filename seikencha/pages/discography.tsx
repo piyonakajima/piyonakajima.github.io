@@ -15,7 +15,7 @@ const discography = () => {
         <LogoCard height={120} />
         <Box ml={4} />
         <Box my={4}>
-          <TitleTypography title='過去作品' />
+          <TitleTypography title='作品一覧' />
         </Box>
       </Box>
       <Box sx={{ flexGrow: 1 }}>
