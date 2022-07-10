@@ -18,10 +18,10 @@ const Detail: React.FC = () => {
   const discDetail = discs.find((disc) => disc.id === discIdNumber)
 
   useEffect(() => {
-    if (!discDetail) {
+    if (!discDetail && discId) {
       router.replace('/discography')
     }
-  }, [discDetail, router])
+  }, [discDetail, discId, router])
   return (
     <>
       <div >
