@@ -11,6 +11,7 @@ import { Header } from '../../../components/organisms/Header'
 import { SeikenchaAppBar } from '../../../components/organisms/SeikenchaAppBar'
 import { SongsCard } from '../../../components/organisms/SongsCard'
 import { GetStaticPaths, GetStaticProps } from 'next'
+import { SeikenchaButton } from '../../../components/molecules/SeikenchaButton'
 
 
 type PathParams = {
@@ -101,33 +102,30 @@ const Detail: React.FC<PageProps> = (props) => {
                       <Box mt={4} />
                       <DescTypography
                         description={discDetail.description}
+                        fontSize={12}
                       />
                       <Box mt={2} />
                       <SongsCard songs={discDetail.songTitles} />
                       <Box mt={4} />
-                      <Button
-                        variant='contained'
-                        href={discDetail.specialUrl}>
-                        特設サイト
-                      </Button>
+                      <SeikenchaButton
+                        title='特設サイト'
+                        url={discDetail.specialUrl} />
                       <Box mt={2} />
                       <Box display='flex'>
-                        <Button
-                          variant='contained'
-                          href={discDetail.downloadUrl}>
-                          ダウンロード版を購入
-                        </Button>
+                        <SeikenchaButton
+                          title='DL版を購入'
+                          url={discDetail.downloadUrl}
+                        />
                         <Box ml={4} />
-                        <Button
-                          variant='contained'
-                          href={discDetail.packageUrl}>
-                          パッケージ版を購入
-                        </Button>
+                        <SeikenchaButton
+                          title='CDを購入'
+                          url={discDetail.packageUrl} />
                       </Box>
                     </Box>
                   </Box>
                 </Grid>
               </Grid>
+              <Box mt={4} />
             </>
           }
         </main>
