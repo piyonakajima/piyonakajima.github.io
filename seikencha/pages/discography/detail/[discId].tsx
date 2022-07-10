@@ -28,7 +28,7 @@ const Detail: React.FC = () => {
       <div >
         <Header />
         <main>
-          <SeikenchaAppBar />
+          <SeikenchaAppBar hasBack={true} />
           {discDetail &&
             <>
               <Grid

@@ -3,13 +3,16 @@ import MenuIcon from '@mui/icons-material/Menu'
 import LinkOutlinedIcon from '@mui/icons-material/LinkOutlined'
 import React, { useState } from 'react'
 import { LogoCard } from '../atoms/LogoCard'
-
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 type contentType = {
   title: string,
   url: string,
   isExternal?: boolean,
 }
-export const SeikenchaAppBar = () => {
+type SeikenchaAppBarProps = {
+  hasBack?: boolean
+}
+export const SeikenchaAppBar: React.FC<SeikenchaAppBarProps> = (props) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
   const contents: contentType[] = [
     { title: '自己紹介', url: '/profile' },
@@ -30,6 +33,18 @@ export const SeikenchaAppBar = () => {
         position='static'
         elevation={1}>
         <Toolbar>
+          {props.hasBack &&
+            <Box>
+              <Link
+                href='/discography'
+                sx={{
+                  textDecoration: 'none',
+                  color: '#542218'
+                }} >
+                <ArrowBackIcon />
+              </Link>
+              <Box ml={6} />
+            </Box>}
           <Link
             href='/'
             sx={{
