@@ -37,7 +37,9 @@ const Detail: React.FC = () => {
                 columns={{ xs: 3, sm: 3, md: 12 }}>
                 <Grid item xs={4}>
                   <Box pt={4} pl={4}>
-                    <AlbumImage disc={discDetail} />
+                    <AlbumImage
+                      disc={discDetail}
+                      width={440} />
                   </Box>
                 </Grid>
                 <Grid item xs={8}>

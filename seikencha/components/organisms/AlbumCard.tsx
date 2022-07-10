@@ -2,20 +2,20 @@ import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typo
 import Link from 'next/link'
 import React from 'react'
 import { DiscType } from '../models/DiscType'
-import { ShoppingLinkIcon } from '../molecules/ShoppingLinkIcon'
 
 type AlbumCardProps = {
   disc: DiscType
+  width: number
 }
 export const AlbumCard: React.FC<AlbumCardProps> = (props) => {
   const id = props.disc.id.toString()
   return (
     <Link href={`/discography/detail/${id}`} >
-      <Card sx={{ maxWidth: props.disc.maxWidth }}>
+      <Card sx={{ maxWidth: props.width }}>
         <CardActionArea>
           <CardMedia
             component="img"
-            height={props.disc.isCD ? props.disc.maxWidth : props.disc.maxWidth * 1.29}
+            height={props.disc.isCD ? props.width : props.width * 1.29}
             image={props.disc.image}
             alt={props.disc.alt}
           />

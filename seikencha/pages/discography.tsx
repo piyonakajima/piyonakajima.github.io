@@ -25,6 +25,7 @@ const discography = () => {
               <Grid key={index} item xs={3}>
                 <AlbumCard
                   disc={disc}
+                  width={220}
                 />
               </Grid>
             )
