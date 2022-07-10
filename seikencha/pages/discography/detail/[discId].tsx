@@ -34,13 +34,13 @@ const Detail: React.FC = () => {
                 justifyContent="center"
                 container
                 spacing={2}
-                columns={{ xs: 4, sm: 4, md: 12 }}>
+                columns={{ xs: 3, sm: 3, md: 12 }}>
                 <Grid item xs={4}>
                   <Box pt={4} pl={4}>
                     <AlbumImage disc={discDetail} />
                   </Box>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={8}>
                   <Box px={4}>
                     {discDetail.eventName && (
                       <Box mt={4}>
