@@ -17,13 +17,17 @@ const profile = () => {
         <Box ml={4} />
         <LogoCard height={120} />
         <Box ml={4} />
-        <TitleTypography title='自己紹介' />
+        <Box my={4}>
+          <TitleTypography title='自己紹介' />
+        </Box>
       </Box>
       <KanbanGirlCard height={250} />
       <Box display='flex' alignItems='center'>
-        <TitleTypography
-          title='正弦鍵盤茶屋'
-          fontSize={30} />
+        <Box my={4}>
+          <TitleTypography
+            title='正弦鍵盤茶屋'
+            fontSize={30} />
+        </Box>
         <Box ml={1} />
         <Box alignItems='center' justifyContent='center' my={3}>
           <TwitterLinkIcon url='https://twitter.com/seikencha' />
@@ -43,9 +47,11 @@ const profile = () => {
         </Grid>
       </Grid>
       <Box my={8} />
-      <TitleTypography
-        title='メンバー紹介'
-        fontSize={30} />
+      <Box my={4}>
+        <TitleTypography
+          title='メンバー紹介'
+          fontSize={30} />
+      </Box>
       <Box sx={{ flexGrow: 1 }}>
         <Grid
           container

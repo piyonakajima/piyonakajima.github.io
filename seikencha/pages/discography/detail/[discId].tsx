@@ -51,7 +51,6 @@ const Detail: React.FC = () => {
                       </Box>
                     )}
                     <Box ml={2}>
-                      <Box mt={4} />
                       <TitleTypography
                         title={discDetail.albumTitle}
                       />
@@ -67,7 +66,7 @@ const Detail: React.FC = () => {
                           </>)
                         }
                         <DescTypography
-                          description={discDetail.releaseDate + 'released'}
+                          description={discDetail.releaseDate + ' released'}
                           fontSize={12}
                         />
                       </Box>
