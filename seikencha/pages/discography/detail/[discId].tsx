@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography } from '@mui/material'
+import { Box, Button, Grid } from '@mui/material'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
 import { AlbumImage } from '../../../components/atoms/AlbumImage'
@@ -17,45 +17,31 @@ type PathParams = {
   discId: string;
 }
 export const getStaticPaths: GetStaticPaths<PathParams> = async () => {
-  // /books/001、/books/002、/books/003 のページを事前生成するには、
-  // 次のように paths プロパティの値を設定して返します。
-  // 本来は id のリストを外部 API（getBookList など）で取得します。
   return {
     paths: [
       { params: { discId: '1' } },
       { params: { discId: '2' } },
       { params: { discId: '3' } },
-      { params: { discId: '4' } },
+      // { params: { discId: '4' } },
     ],
-    fallback: false  // 上記以外のパスでアクセスした場合は 404 ページにする
+    fallback: false
   }
 }
 
 type PageProps = {
   discId: number
 }
-// URL のパラメータ情報（プレースホルダー部分に指定された値）をもとに、
-// ページコンポーネントに渡す props データを生成します。
-// context.params プロパティでこれらのパラメータを参照できるので、
-// その値に応じて props データを生成して返すように実装します。
 export const getStaticProps: GetStaticProps<PageProps> = async context => {
-  // ファイル名が [id].tsx なので id パラメーターを取り出すことができる
   const { discId } = context.params as PathParams
-
-  // 本来はここで getBook(id) のように API を呼び出してデータを取得する
   const props: PageProps = {
     discId: (typeof discId === 'string') ? parseInt(discId) : 0
   }
 
-  // ページコンポーネントに渡す PageProps オブジェクトを
-  // props プロパティに設定したオブジェクトを返す
   return { props }
 }
 
 const Detail: React.FC<PageProps> = (props) => {
   const router = useRouter()
-  // const { discId } = router.query;
-  // const discIdNumber = (typeof discId === 'string') ? parseInt(discId) : 0
   const discDetail = discs.find((disc) => disc.id === props.discId)
   const windowSize = useWindowSize()
   useEffect(() => {
