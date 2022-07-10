@@ -37,7 +37,7 @@ const Detail: React.FC = () => {
                 spacing={2}
                 columns={{ xs: 3, sm: 3, md: 12 }}>
                 <Grid item xs={4}>
-                  <Box pt={4} ml={(windowSize && windowSize.width >= 440) ? 2 : 0}>
+                  <Box pt={4} ml={(windowSize.width && windowSize.width >= 440) ? 2 : 0}>
                     <AlbumImage
                       disc={discDetail}
                       width={440} />
