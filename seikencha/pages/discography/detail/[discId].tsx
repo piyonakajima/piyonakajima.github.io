@@ -1,17 +1,13 @@
 import { Box, Button, Grid } from '@mui/material'
 import { useRouter } from 'next/router'
-import React from 'react'
-import { ArtistTitle } from '../../../components/atoms/ArtistTitle'
+import React, { useEffect } from 'react'
 import { DescTypography } from '../../../components/atoms/DescTypography'
-import { KanbanGirlCard } from '../../../components/atoms/KanbanGirlCard'
-import { LogoCard } from '../../../components/atoms/LogoCard'
 import { TitleTypography } from '../../../components/atoms/TitleTypography'
 import { discs } from '../../../components/models/DiscType'
-import { AlbumCard } from '../../../components/organisms/AlbumCard'
 import { Header } from '../../../components/organisms/Header'
-import { ProfileCard } from '../../../components/organisms/ProfileCard'
 import { SeikenchaAppBar } from '../../../components/organisms/SeikenchaAppBar'
 import { SongsCard } from '../../../components/organisms/SongsCard'
+
 
 const Detail: React.FC = () => {
   const router = useRouter()
@@ -19,6 +15,11 @@ const Detail: React.FC = () => {
   const discIdNumber = (typeof discId === 'string') ? parseInt(discId) : 0
   const discDetail = discs.find((disc) => disc.id === discIdNumber)
 
+  useEffect(() => {
+    if (!discDetail) {
+      router.replace('/discography')
+    }
+  }, [discDetail, router])
   return (
     <>
       <div >
@@ -45,7 +46,7 @@ const Detail: React.FC = () => {
                     title={discDetail.albumTitle}
                   />
                   <DescTypography
-                    description={discDetail.releaseDate}
+                    description={discDetail.releaseDate + 'released'}
                     fontSize={12}
                   />
                   <Box mt={6} />

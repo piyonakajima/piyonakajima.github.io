@@ -2,6 +2,8 @@ export type DiscType = {
   id: number,
   albumTitle: string
   songTitles: string[]
+  eventName?: string
+  releaseNumber?: string
   releaseDate: string
   description: string
   image: string
@@ -21,7 +23,9 @@ export const discs: DiscType[] = [
       '	螢火を灯す～Piano arr.～',
       '螢火を灯す(Instrumental)'
     ],
-    releaseDate: '4th Album [M3-2021春](2021.10.31 released)',
+    eventName: 'M3-2021春',
+    releaseNumber: '4th Album',
+    releaseDate: '2021.10.31',
     description: 'もう誰にも委ねない。独りで全部決められるから── \
     大切な人との決別。前に進む強い意志。 和と憂いをモチーフに紡ぐピアノボーカルユニット正弦鍵盤茶屋１年ぶりの新作！\
     ピアノと正弦波が織りなす「螢火を灯す」配信開始。\
@@ -49,7 +53,9 @@ export const discs: DiscType[] = [
       '落花流水～Piano ver.～',
       '星の雫～Piano ver.～'
     ],
-    releaseDate: '3rd Album [M3-2020秋](2020.10.25 released)',
+    eventName: 'M3-2020秋',
+    releaseNumber: '3rd Album',
+    releaseDate: '2020.10.25',
     description: '今年もまた会いに来たよ\
     決して交わらない二人の世界、忘れられない想いが今蘇る。\
     和と憂いをモチーフに紡ぐピアノボーカルユニット正弦鍵盤茶屋の第三作！\
@@ -71,7 +77,9 @@ export const discs: DiscType[] = [
       '溶',
       '温'
     ],
-    releaseDate: '2nd Album [M3-2020春](2020.03.01 released)',
+    releaseNumber: '2nd Album',
+    eventName: 'M3-2020春',
+    releaseDate: '2020.03.01',
     description: '繋いだ手の中に隠した、私と貴女だけの物語------\
     物悲しく儚いピアノが綴る女性ツインボーカル曲「星の雫」、弦楽器とオルガンが織り成す哀愁溢れる女性ボーカル曲「空蝉が哭く」他全５曲入\
     ',
@@ -94,7 +102,9 @@ export const discs: DiscType[] = [
       '名前のない未来',
       '綴'
     ],
-    releaseDate: '1st Album [M3-2019秋](2019.10.27 released)',
+    releaseNumber: '1st Album',
+    eventName: 'M3-2019秋',
+    releaseDate: '2019.10.27',
     description: '闇と憂い、和をテーマに描いたピアノ＆女性ボーカルアルバム。\
     ​\
     和を感じさせるピアノとコーラスワークが映えるバラードナンバー「落花流水」\
