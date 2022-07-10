@@ -8,7 +8,8 @@ type SongsCardProps = {
 export const SongsCard: React.FC<SongsCardProps> = (props) => {
   return (
     <Box>
-      <DescTypography description='収録楽曲' />
+      <DescTypography description='収録楽曲' fontSize={17} />
+      <Box mt={2} />
       {props.songs.map((song, index) =>
         <Box key={index}>
           <DescTypography description={(index + 1) + '.' + song} fontSize={15} />
