@@ -61,7 +61,7 @@ const profile = () => {
           <Grid item xs={4}>
             <ProfileCard
               name='ずんだちきん'
-              description='作詞、作曲、編曲、ピアノ、シンセサイザー'
+              description='作詞、作曲、編曲、ピアノ、シンセサイザー。えだまめをこよなく愛する。'
               image='/image/zunchiki.jpg'
               alt='ずんだちきんの近影'
               twitterUrl='https://twitter.com/zunda_chicken' />

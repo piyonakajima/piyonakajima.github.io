@@ -6,12 +6,14 @@ export type DiscType = {
   releaseNumber?: string
   releaseDate: string
   description: string
+  topImage?: string
   image: string
   alt: string
   specialUrl: string
   downloadUrl?: string
   packageUrl?: string
   isCD?: boolean
+  isInCarousel?: boolean
 }
 export const discs: DiscType[] = [
   {
@@ -33,11 +35,13 @@ export const discs: DiscType[] = [
     作詞作曲編曲：ずんだちきん\n\
     ボーカル：nononore\n\
     イラスト：ノーコピーライトガール様',
+    topImage: '/image/albumsTop/4th_top.jpeg',
     image: '/image/albums/4thal.jpeg',
     alt: '4th',
     specialUrl: 'https://seikencha-4th.tumblr.com/',
     downloadUrl: 'https://seikencha.booth.pm/items/3357537',
     isCD: true,
+    isInCarousel: true
   },
   {
     id: 3,
@@ -60,11 +64,13 @@ export const discs: DiscType[] = [
 和と憂いをモチーフに紡ぐピアノボーカルユニット正弦鍵盤茶屋の第三作！\n\
 叶わなかった恋を唄う「潮解」、和楽器の箏の音色を取り入れた「ふわり舞い散る花びらのように」、 \n\
 優しく包み込むような「麻糸の誓い」他全８曲入。',
+    topImage: '/image/albumsTop/3rd_top.jpeg',
     image: '/image/albums/3rdal.jpeg',
     alt: '3rd',
     specialUrl: 'https://seikencha-3rd.tumblr.com/',
     packageUrl: 'https://seikencha.booth.pm/items/2458876',
     downloadUrl: 'https://seikencha.booth.pm/items/2912516',
+    isInCarousel: true
   },
   {
     id: 2,
@@ -83,11 +89,13 @@ export const discs: DiscType[] = [
 物悲しく儚いピアノが綴る女性ツインボーカル曲「星の雫」、 \n\
 弦楽器とオルガンが織り成す哀愁溢れる女性ボーカル曲「空蝉が哭く」他全５曲入\n\
     ',
+    topImage: '/image/albumsTop/2nd_top.png',
     image: '/image/albums/2ndal.png',
     alt: '2nd',
     specialUrl: 'https://seikencha.tumblr.com/',
     downloadUrl: 'https://seikencha.booth.pm/items/1856719',
     packageUrl: 'https://seikencha.booth.pm/items/1868137',
+    isInCarousel: true
   },
   {
     id: 1,

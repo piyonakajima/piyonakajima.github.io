@@ -17,11 +17,14 @@ const Home: NextPage = () => {
           <SeikenchaAppBar />
           <Grid container spacing={2} columns={{ xs: 4, sm: 4, md: 12 }}>
             <Grid item xs={8}>
-              <KanbanGirlCard height={height ? height - 60 : undefined} />
+              <KanbanGirlCard height={height ? height - 60 : 588} />
             </Grid>
             <Grid item xs={4}>
               {!isMobile && <Box display='flex' mt={65} />}
-              <ArtistTitle />
+              <Box>
+                <ArtistTitle />
+                <Box mt={20} />
+              </Box>
             </Grid>
           </Grid>
         </main>
